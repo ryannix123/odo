@@ -263,7 +263,7 @@ oc import-image openjdk18 --from=registry.access.redhat.com/redhat-openjdk-18/op
 # Tag the image so it is accessible by Odo
 oc annotate istag/openjdk18:latest tags=builder
 ```
-After tagging the image, you may now deploy it with Odo:
+After tagging the image, you may now deploy it with Odo. Note: if you're using CentOS, you will need to add a PEM file to your OpenShift master first by running cd /etc/rhsm/ca/; touch redhat-uep.pem
 
 ```sh
 odo create openjdk18 --git https://github.com/openshift-evangelists/Wild-West-Backend
